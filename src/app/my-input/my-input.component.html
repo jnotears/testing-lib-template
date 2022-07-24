@@ -1,0 +1,9 @@
+<div class="my-input-container">
+  <ng-container >
+    <div [ngStyle]="{ visibility: ngControl.control?.valid || ngControl.control?.pristine ? 'hidden' : 'visible'}" class="input-invalid">
+      <img src="assets/images/exclamation.svg">
+    </div>
+  </ng-container>
+  <input class="my-input" [formControl]="$any(ngControl.control)" [ngClass]="{'my-invalid': (!ngControl.control?.valid && !ngControl.control?.pristine)}">
+  <div class="invalid-message" [ngStyle]="{ visibility: ngControl.control?.valid || ngControl.control?.pristine ? 'hidden' : 'visible'}">{{invalidMsg}}</div>
+</div>
